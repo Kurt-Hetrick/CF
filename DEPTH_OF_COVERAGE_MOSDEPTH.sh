@@ -60,7 +60,7 @@
 		| awk 'BEGIN {OFS="\t"} {print $1,$2,$3,$3/$2}' \
 		| cut -f 4 \
 		| datamash transpose \
-		| awk 'BEGIN {print "SAMPLE","MEAN_AUTO","MEAN_X","MEAN_Y","NORM_X","NORM_Y"} \
+		| awk 'BEGIN {print "#SAMPLE","MEAN_AUTO","MEAN_X","MEAN_Y","NORM_X","NORM_Y"} \
 			{print "'$SM_TAG'",$1,$2,$3,$2/$1,$3/$1}' \
 		| sed 's/ /\t/g' \
 	>| $OUTPUT_DIR/$SM_TAG".GENDER_CHECK.txt"
