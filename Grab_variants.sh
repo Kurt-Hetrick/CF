@@ -2,7 +2,7 @@
 
 IN_VCF=$1 # needs to be bgzip (.gz) vcf with index (.tbi)
 LOCI=$2 # chr[0-9]:start-stop
-VARIANT=$3 # the CF name
+VARIANT=$3 # the CF name...argument might have to be surrounded by single quotes to escape base->base nomenclature
 RS_ID=$4 # dbsnp name
 
 module load datamash/1.1.0
