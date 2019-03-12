@@ -44,6 +44,7 @@ $LOCUS \
 		else if ( a[1]=="1/1" && b[1]=="0/0" && c[1]=="0/0" && d[1]=="0/0" && e[1]=="0/0" ) \
 			print $1 , "10TG;7T" , "10TG;7T" ; \
 		else print $1 , "UNKNOWN" , "PLEASE_CHECK"}' \
+	| sort -k 1,1 \
 	| awk 'BEGIN {print "Subject_ID" "\t" "polyTG_T_Allele_1" "\t" "polyTG_T_Allele_2"} \
 		{print $0}' \
 >> $OUTDIR/polyTG_T_GT.txt
