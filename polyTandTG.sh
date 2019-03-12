@@ -4,6 +4,7 @@ VCF="/mnt/research/cf/CFTR/PILOT/pilot_117470081-117677104.vcf.gz"
 LOCUS="chr7:117548606-117548630"
 OUTDIR="/mnt/research/cf/CFTR/PILOT"
 
+rm -rvf $OUTDIR/polyTG_T_GT.txt
 
 tabix -h $VCF \
 $LOCUS \
@@ -39,7 +40,7 @@ $LOCUS \
 		else if ( a[1]=="0/2" && b[1]=="0/0" && c[1]=="0/0" && d[1]=="0/0" && e[1]=="0/0" ) \
 			print $1 , "11TG;7T" , "12TG;7T" ; \
 		else if ( a[1]=="0/2" && b[1]=="0/0" && c[1]=="0/0" && d[1]=="0/1" && e[1]=="0/0" ) \
-			print $1 , "12TG;7T" , "11TG;5T" ; \
+			print $1 , "12TG;7T" , "10TG;9T" ; \
 		else if ( a[1]=="1/1" && b[1]=="0/0" && c[1]=="0/0" && d[1]=="0/0" && e[1]=="0/0" ) \
 			print $1 , "10TG;7T" , "10TG;7T" ; \
 		else print $1 , "UNKNOWN" , "PLEASE_CHECK"}' \
